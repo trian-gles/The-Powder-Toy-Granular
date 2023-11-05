@@ -301,7 +301,7 @@
 					"numoutlets" : 8,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 379.0, 83.0, 172.0, 22.0 ],
-					"text" : "poly~ powderFM 6 @parallel 1"
+					"text" : "poly~ powderFM 8 @parallel 1"
 				}
 
 			}

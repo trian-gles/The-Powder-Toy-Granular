@@ -51,7 +51,6 @@ local function formatProbs(bins)
 end
 
 function granmodule.init()
-	post("makin grain")
 	granmodule.state.carriermu = 8 
 	granmodule.state.carriersig = 0 
 	granmodule.state.modfreqmu = 4

@@ -22,7 +22,6 @@ RATEMAX = 1000
 DURMIN = 0.1
 DURMAX = 1000
 
-MULTICHAN = true
 
 local function box_muller(mu, sigma2) -- should be replaced with ziggurat at some point
 	local theta = 2 * math.pi * math.random()
@@ -34,7 +33,7 @@ local function uniform(min, max)
 	return math.random() * (max - min) + min
 end
 
-function granmodule.init()
+function granmodule.init(multichan)
 	granmodule.state.carriermu = 8 
 	granmodule.state.carriersig = 0 
 	granmodule.state.modfreqmu = 4
@@ -47,8 +46,8 @@ function granmodule.init()
 	granmodule.state.panlo = 0
 	granmodule.state.ratelo = 10
 	granmodule.state.ratehi = 20
-
-	if MULTICHAN then
+	granmodule.state.multichan = multichan
+	if multichan==1 then
 		npan.set_speakers({45, 1,   -- front left
       -45, 1,   -- front right
        90, 1,   -- side left
@@ -58,6 +57,7 @@ function granmodule.init()
         0, 1,   -- front center
       180, 1 	-- rear center
 	  })
+	  	post("setting up multichan")
 	end
 	
 end
@@ -69,7 +69,7 @@ end
 function granmodule.generate()
 	local pan
 
-	if MULTICHAN then
+	if (granmodule.state.multichan==1) then
 		local frac = uniform(granmodule.state.panlo, granmodule.state.panhi)
     	frac = restrict(PANMIN, PANMAX, frac)
 		local degrees = frac * 360 + 180

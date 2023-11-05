@@ -50,8 +50,8 @@ local function formatProbs(bins)
 	return count
 end
 
-function granmodule.init()
-	post("makin grain")
+function granmodule.init(distortion)
+	granmodule.state.distortion = distortion
 	granmodule.state.carriermu = 8 
 	granmodule.state.carriersig = 0 
 	granmodule.state.modfreqmu = 4
@@ -129,7 +129,7 @@ function granmodule.generate()
 
 	local fund = box_muller(granmodule.state.fundmu, granmodule.state.fundsig)
 	
-	local carrierfreq = fund * partialnum
+	local carrierfreq = fund * partialnum + granmodule.state.distortion
 	carrierfreq = restrict(CARRIERMIN, CARRIERMAX, carrierfreq)
 	local amp = granmodule.state.amp --x[1][1] + 0.5
 	amp = restrict(0, 1, amp)

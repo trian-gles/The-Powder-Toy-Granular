@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 609.0, 79.0, 640.0, 480.0 ],
+		"rect" : [ 45.0, 182.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,42 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "multichannelsignal" ],
+					"patching_rect" : [ 583.0, 217.0, 39.0, 22.0 ],
+					"text" : "alarm"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "multichannelsignal" ],
+					"patching_rect" : [ 532.0, 170.0, 75.0, 22.0 ],
+					"text" : "plant-embed"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 583.0, 97.0, 24.0, 22.0 ],
+					"text" : "life"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-29",
 					"maxclass" : "newobj",
@@ -219,7 +255,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 457.0, -12.0, 58.0, 22.0 ],
+					"patching_rect" : [ 379.0, -5.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -231,7 +267,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 457.0, 34.0, 82.0, 22.0 ],
+					"patching_rect" : [ 379.0, 41.0, 82.0, 22.0 ],
 					"text" : "threadcount 0"
 				}
 
@@ -322,6 +358,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 7 ],
 					"source" : [ "obj-12", 7 ]
 				}
@@ -373,6 +416,29 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"order" : 0,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"order" : 1,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-15", 0 ]
 				}
 
 			}
@@ -534,6 +600,8 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-11::obj-11" : [ "vst~", "vst~", 0 ],
+			"obj-15::obj-29" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-2" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"parameterbanks" : 			{
 
@@ -543,12 +611,40 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "Vital.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../Max 8/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "alarm.maxpat",
+				"bootpath" : "~/Documents/projects/The-Powder-Toy-Granular",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "life.maxpat",
+				"bootpath" : "~/Documents/projects/The-Powder-Toy-Granular",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "luagran~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
 				"name" : "ml.mlp.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "plant-embed.maxpat",
+				"bootpath" : "~/Documents/projects/The-Powder-Toy-Granular",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "powderFM.maxpat",

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 49.0, 195.0, 857.0, 993.0 ],
+		"rect" : [ 40.0, 82.0, 1301.0, 763.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1338,7 +1338,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-10",
@@ -1965,7 +1964,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 857.0, 967.0 ],
+						"rect" : [ 0.0, 26.0, 1301.0, 737.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2624,7 +2623,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 308.587033987045288, 105.51123309135437, 58.0, 21.0 ],
+									"patching_rect" : [ 308.587033987045288, 105.51123309135437, 58.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2646,7 +2645,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 203.587033987045288, 148.51123309135437, 81.0, 21.0 ],
+									"patching_rect" : [ 203.587033987045288, 148.51123309135437, 81.0, 22.0 ],
 									"text" : "ml.mlp 6 8 8 2"
 								}
 
@@ -3018,7 +3017,7 @@
 					"numoutlets" : 8,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 256.37036919593811, 370.0, 258.0, 22.0 ],
-					"text" : "luagran~ powder.lua @FM 1 @chans 8 @init 1"
+					"text" : "luagran~ powder.lua @FM 1 @chans 8 @init 0"
 				}
 
 			}
@@ -3831,6 +3830,16 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "luagran~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "ml.mlp.mxe64",
+				"type" : "mx64"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

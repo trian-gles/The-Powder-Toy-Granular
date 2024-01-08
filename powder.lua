@@ -78,8 +78,14 @@ function granmodule.generate()
 
 
 	else
-		pan = uniform(granmodule.state.panlo, granmodule.state.panhi)
-    	pan = restrict(PANMIN, PANMAX, pan)
+		local rpan = uniform(granmodule.state.panlo, granmodule.state.panhi)
+    	rpan = restrict(PANMIN, PANMAX, rpan)
+		pan = {}
+		pan[1] = rpan
+		pan[2] = 1 - rpan
+		for i = 3,8 do
+			pan[i] = 0
+		end
 	end
 	
 

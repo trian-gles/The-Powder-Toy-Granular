@@ -22,7 +22,7 @@ RATEMAX = 1000
 DURMIN = 0.1
 DURMAX = 1000
 
-MULTICHAN = true
+MULTICHAN = false
 
 local function box_muller(mu, sigma2) -- should be replaced with ziggurat at some point
 	local theta = 2 * math.pi * math.random()
@@ -50,7 +50,7 @@ local function formatProbs(bins)
 	return count
 end
 
-function granmodule.init()
+function granmodule.init(dist)
 	granmodule.state.carriermu = 8 
 	granmodule.state.carriersig = 0 
 	granmodule.state.modfreqmu = 4
@@ -63,6 +63,7 @@ function granmodule.init()
 	granmodule.state.panlo = 0
 	granmodule.state.ratelo = 2
 	granmodule.state.ratehi = 4
+	granmodule.state.dist = dist
 
 	granmodule.state.partiallo = 1
 	granmodule.state.partialhi = 16
@@ -128,7 +129,7 @@ function granmodule.generate()
 
 	local fund = box_muller(granmodule.state.fundmu, granmodule.state.fundsig)
 	
-	local carrierfreq = fund * partialnum
+	local carrierfreq = fund * partialnum + granmodule.state.dist
 	carrierfreq = restrict(CARRIERMIN, CARRIERMAX, carrierfreq)
 	local amp = granmodule.state.amp --x[1][1] + 0.5
 	amp = restrict(0, 1, amp)

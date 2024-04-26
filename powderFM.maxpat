@@ -1977,7 +1977,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1128.0, 335.0, 857.0, 911.0 ],
+						"rect" : [ 0.0, 26.0, 857.0, 911.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2015,7 +2015,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 134.0, 276.0, 50.0, 223.0 ],
-									"text" : "0.281336 0.054347 -0.088852 -0.021207 0.105871 -0.054425 0.161812 0.042523"
+									"text" : "0.272731 0.06168 -0.075187 0.047733 0.106691 -0.078296 0.035122 -0.046019"
 								}
 
 							}
@@ -3052,7 +3052,7 @@
 					"numoutlets" : 8,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 256.37036919593811, 370.0, 258.0, 22.0 ],
-					"text" : "luagran~ powder.lua @FM 1 @chans 8 @init 1"
+					"text" : "luagran~ powder.lua @FM 1 @init 1 @chans 8"
 				}
 
 			}

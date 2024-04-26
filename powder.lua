@@ -74,9 +74,6 @@ function granmodule.generate()
     	frac = restrict(PANMIN, PANMAX, frac)
 		local degrees = frac * 360 + 180
 		pan = npan.get_gains(degrees, 1)
-
-
-
 	else
 		pan = uniform(granmodule.state.panlo, granmodule.state.panhi)
     	pan = restrict(PANMIN, PANMAX, pan)
